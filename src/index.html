@@ -9,9 +9,21 @@
 </head>
 <body>
 
-    
+ 
+    <form id="addTodo">
+        <input type="text" id="task" placeholder="task" required>
 
+        <select id="priority"  required>
+            <option value="">Prioritet</option>
+                <option value="1">Låg</option>
+                <option value="2">Mellan</option>
+                <option value="3">Hög</option>
+        </select>
 
+        <button id="todoButton" type="submit">Lägg till</button>
+    </form>
+
+    <ul id="todoList"></ul>
     
 </body>
 </html>
