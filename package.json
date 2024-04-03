@@ -1,0 +1,21 @@
+{
+  "name": "typscript-moment-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "source": "src/index.html",
+  
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0",
+    "typescript": "^5.4.3"
+  }
+
+  
+}
