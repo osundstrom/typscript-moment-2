@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.scss">
+    <script src="main.ts" type="module" defer></script>
+
+    <title>Moment 2</title>
+</head>
+<body>
+
+    <div id="picHead">
+        <h1>Moment 2 - TypeScript</h1>
+    </div>
+
+ 
+    <form id="addTodo">
+        <input type="text" id="task" placeholder="task" required>
+
+        <select id="priority"  required>
+            <option value="">Prioritet</option>
+                <option value="1">Låg</option>
+                <option value="2">Mellan</option>
+                <option value="3">Hög</option>
+        </select>
+
+        <button id="todoButton" type="submit">Lägg till</button>
+    </form>
+    
+    <br>
+    <button id="deleteList">Rensa lista</button>
+    <br>
+    <ul id="todoList">
+        
+    </ul>
+    
+</body>
+</html>
