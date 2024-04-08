@@ -2,7 +2,7 @@
   "name": "typscript-moment-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "author": "",
   "license": "ISC",
   "source": "src/index.html",
