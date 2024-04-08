@@ -24,7 +24,7 @@ constructor(task: string, priority: number, completed: boolean) {
 
 addTodo(task: string, priority: number): boolean { 
 
-    if(task == task.trim()) {//Task kan ej vara tomt
+    if(task !== task.trim()) {//Task kan ej vara tomt
         console.log("falseTask")
         return false;
 

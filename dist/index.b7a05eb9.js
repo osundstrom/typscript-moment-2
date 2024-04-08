@@ -593,7 +593,7 @@ class TodoList {
         this.loadFromLocalStorage(); //laddar Todos från localStorage.
     }
     addTodo(task, priority) {
-        if (task == task.trim()) {
+        if (task !== task.trim()) {
             console.log("falseTask");
             return false;
         }
@@ -696,11 +696,7 @@ function displayTodos() {
         ;
         todoComplete.addEventListener("click", ()=>{
             todoList.markTodoCompleted(x); // todoList anropas till markTodoCompleted med x värdet (den man klickade på)
-<<<<<<< HEAD
-            displayTodos(); //funktion displayTodos
-=======
             displayTodos(); //kallar diplayTodos
->>>>>>> DEV
         });
         const todoText = document.createTextNode(todo.task) //texnode för todo.task
         ;
