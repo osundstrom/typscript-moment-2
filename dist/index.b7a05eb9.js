@@ -689,6 +689,7 @@ function displayTodos() {
         ;
         todoComplete.addEventListener("click", ()=>{
             todoList.markTodoCompleted(x); // todoList anropas till markTodoCompleted med x värdet (den man klickade på)
+            displayTodos(); //funktion displayTodos
         });
         const todoText = document.createTextNode(todo.task) //texnode för todo.task
         ;
