@@ -1,0 +1,47 @@
+body {
+  background-color: #f0f8ff;
+  width: 100vw;
+}
+
+body #deleteList {
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+body h1 {
+  text-align: center;
+  color: #000;
+  text-decoration: underline;
+}
+
+#addTodo {
+  text-align: center;
+  margin-top: 5vh;
+  display: block;
+  position: relative;
+}
+
+#addTodo button:hover {
+  background-color: #90ee90;
+}
+
+#addTodo button, #addTodo input, #addTodo select {
+  border: 2px solid #000;
+}
+
+#todoList {
+  text-align: center;
+  display: block;
+}
+
+#todoList li {
+  background-color: wheat;
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 50vw;
+  margin: 1% auto auto;
+  padding: 1%;
+  list-style: none;
+}
+/*# sourceMappingURL=index.ff312cca.css.map */
