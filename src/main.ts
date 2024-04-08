@@ -66,8 +66,8 @@ markTodoCompleted(todoIndex: number): void {
     if (todoIndex >= 0 && todoIndex < this.todos.length) { //todoIndex mellan 0 och todos längd. 
         this.todos[todoIndex].completed = true; //sätter den till klar eller completed till true. 
 
-        this.todos = this.todos.filter((todo, index) => index !== todoIndex);//
-        this.saveToLocalStorage();
+        this.todos = this.todos.filter((todo, index) => index !== todoIndex);// filtrerar todos, kollar om index är skilt från todoIndex, alltså att de ska behållas.
+        this.saveToLocalStorage();//sparar till localstorage
     }
 }
 
@@ -127,16 +127,21 @@ deleteAllTodos(): void {
 
 
 
-//För form, input, knappar
+//Helaform
 const addTodoForm:HTMLFormElement = document.getElementById("addTodo") as HTMLFormElement;
+//input task
 const taskInput:HTMLInputElement = document.getElementById("task") as HTMLInputElement;
+//input priority
 const priorityInput:HTMLInputElement = document.getElementById("priority") as HTMLInputElement;
+//Knapp lägga till
 const addTodoButton:HTMLButtonElement = document.getElementById("todoButton") as HTMLButtonElement;
+//Knapp deleta alla
 const deleteButton: HTMLButtonElement = document.getElementById("deleteList") as HTMLButtonElement;
 
 //För listan (UL)
 const todoListElement:HTMLUListElement = document.getElementById("todoList") as HTMLUListElement;
 
+//skapar ny
 const todoList = new TodoList(); 
 
 //funktion för att visa todos
@@ -155,19 +160,20 @@ function displayTodos() {
         const todoComplete = document.createElement("button"); //skapar button
                 todoComplete.innerText = "klar" //Button text sätts till klar
 
+        const todoHr = document.createElement("hr")//Skapar hr
+
         todoComplete.addEventListener("click", () => { //vid klick på kanppen 
             todoList.markTodoCompleted(x); // todoList anropas till markTodoCompleted med x värdet (den man klickade på)
-            displayTodos(); //funktion displayTodos
+            displayTodos();//kallar diplayTodos
         })
 
         const todoText = document.createTextNode(todo.task) //texnode för todo.task
 
         todoDiv.appendChild(todoText); //lägger in text i div
+        todoDiv.appendChild(todoHr); //Lägger till hr i div
         todoDiv.appendChild(todoComplete); //lägger till klar knappen i div
         todoLI.appendChild(todoDiv); //lägger till div i li
-        todoListElement.appendChild(todoLI); //
-
-
+        todoListElement.appendChild(todoLI); //LÄgger till todoLI till UL-listan
 
 
     })}
@@ -177,14 +183,14 @@ function displayTodos() {
 
 //eventlistener som kör displaytodos då sidan laddas in
 document.addEventListener("DOMContentLoaded", function() { 
-    displayTodos();
+    displayTodos(); //kör displaytodods
 });
 
 
 //Vid klick på deleteButton raderas alla i listan
 deleteButton.addEventListener("click", function() {
     todoList.deleteAllTodos();
-    displayTodos();
+    displayTodos(); //Kör displayTodods
 });
 
 
@@ -210,7 +216,7 @@ addTodoButton.addEventListener("click", function(e) {
             break; 
     }
     
-    const added = todoList.addTodo(task +" (Prio: "+ priorityText + ")" + " - ", priority); // sätter added till de inmatade värdena, priority visas aldrig då det endast skulle visats en siffra mellan 1-3. 
+    const added = todoList.addTodo(task +" - (Prio: "+ priorityText + ")" , priority); // sätter added till de inmatade värdena, priority visas aldrig då det endast skulle visats en siffra mellan 1-3. 
 
     if (added) { //om den blir tillagd
         taskInput.value = ""; //rensa
