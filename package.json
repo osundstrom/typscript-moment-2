@@ -18,5 +18,5 @@
     "typescript": "^5.4.3"
   },
   
-  "main": "index.js"
+  "main": "index.html"
 }
