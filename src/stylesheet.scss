@@ -84,6 +84,10 @@ background-color: aliceblue;
 .completed {
     text-decoration: line-through;
 }
+
+.deleteButton:hover {
+    background-color: lightcoral;
+}
 }
 
 //-------------------------------------------------------------//

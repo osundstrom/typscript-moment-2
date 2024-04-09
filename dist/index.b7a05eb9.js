@@ -697,8 +697,13 @@ function displayTodos() {
         ;
         todoComplete.addEventListener("click", ()=>{
             todoList.markTodoCompleted(x); // todoList anropas till markTodoCompleted med x värdet (den man klickade på)
-            //todoP.classList.add("completed");
             displayTodos(); //kallar diplayTodos
+        });
+        const todoDelete = document.createElement("button");
+        todoDelete.innerText = "Radera";
+        todoDelete.addEventListener("click", ()=>{
+            todoList.deleteTodo(x); // todoList anropas till deleteTodo med x värdet (den man klickade på)
+            displayTodos(); //kallar displayTodos
         });
         const todoText = document.createTextNode(todo.task) //texnode för todo.task
         ;
@@ -708,7 +713,12 @@ function displayTodos() {
         todoDiv.appendChild(todoComplete); //lägger till klar knappen i div
         todoLI.appendChild(todoDiv); //lägger till div i li
         todoListElement.appendChild(todoLI); //LÄgger till todoLI till UL-listan
-        if (todo.completed) todoP.classList.add("completed"); //sätter vi todoP till class completed (överstyken)
+        if (todo.completed) {
+            todoP.classList.add("completed"); //sätter vi todoP till class completed (överstyken)
+            todoDiv.appendChild(todoDelete); //lägger till i div
+            todoDelete.className = "deleteButton"; //så hoover färg blir röd
+            todoComplete.style.display = "none"; //visar ej klar knapp
+        }
     });
 }
 //eventlistener som kör displaytodos då sidan laddas in
