@@ -65,6 +65,14 @@ body h1 {
   display: block;
 }
 
+#todoList .completed {
+  text-decoration: line-through;
+}
+
+#todoList .deleteButton:hover {
+  background-color: #f08080;
+}
+
 @media screen and (width <= 800px) {
   #addTodo {
     width: 100vw;
