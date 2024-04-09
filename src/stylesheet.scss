@@ -57,7 +57,6 @@ background-color: aliceblue;
     text-align: center;
     width: 100vw;
 
-
     li{
         list-style: none;
         padding: 1%;
@@ -78,8 +77,13 @@ background-color: aliceblue;
             word-wrap: break-word;
             white-space: normal;
         }
+       
+        
         
     }
+.completed {
+    text-decoration: line-through;
+}
 }
 
 //-------------------------------------------------------------//
@@ -158,3 +162,4 @@ background-color: aliceblue;
         }
     
 }}
+

@@ -593,7 +593,7 @@ class TodoList {
         this.loadFromLocalStorage(); //laddar Todos från localStorage.
     }
     addTodo(task, priority) {
-        if (task == task.trim()) {
+        if (task !== task.trim()) {
             console.log("falseTask");
             return false;
         }
@@ -626,7 +626,7 @@ class TodoList {
     markTodoCompleted(todoIndex) {
         if (todoIndex >= 0 && todoIndex < this.todos.length) {
             this.todos[todoIndex].completed = true; //sätter den till klar eller completed till true. 
-            this.todos = this.todos.filter((todo, index)=>index !== todoIndex); // filtrerar todos, kollar om index är skilt från todoIndex, alltså att de ska behållas.
+            //this.todos = this.todos.filter((todo, index) => index !== todoIndex);// filtrerar todos, kollar om index är skilt från todoIndex, alltså att de ska behållas.
             this.saveToLocalStorage(); //sparar till localstorage
         }
     }
@@ -689,22 +689,26 @@ function displayTodos() {
     allTodos.forEach((todo, x)=>{
         const todoLI = document.createElement("li"); //skapar li
         const todoDiv = document.createElement("div"); //skapar div
+        const todoP = document.createElement("p"); //skapar p
+        const todoHr = document.createElement("hr") //Skapar hr
+        ;
         const todoComplete = document.createElement("button"); //skapar button
         todoComplete.innerText = "klar" //Button text sätts till klar
         ;
-        const todoHr = document.createElement("hr") //Skapar hr
-        ;
         todoComplete.addEventListener("click", ()=>{
             todoList.markTodoCompleted(x); // todoList anropas till markTodoCompleted med x värdet (den man klickade på)
+            //todoP.classList.add("completed");
             displayTodos(); //kallar diplayTodos
         });
         const todoText = document.createTextNode(todo.task) //texnode för todo.task
         ;
-        todoDiv.appendChild(todoText); //lägger in text i div
+        todoP.appendChild(todoText); //lägger in text i div
+        todoDiv.appendChild(todoP); //lägger in text i div
         todoDiv.appendChild(todoHr); //Lägger till hr i div
         todoDiv.appendChild(todoComplete); //lägger till klar knappen i div
         todoLI.appendChild(todoDiv); //lägger till div i li
         todoListElement.appendChild(todoLI); //LÄgger till todoLI till UL-listan
+        if (todo.completed) todoP.classList.add("completed"); //sätter vi todoP till class completed (överstyken)
     });
 }
 //eventlistener som kör displaytodos då sidan laddas in
