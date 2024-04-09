@@ -15,16 +15,30 @@ body #deleteList:hover {
   background-color: #f08080;
 }
 
-body h1 {
+#picHead {
+  background-color: #b0c4de;
+  border-bottom: 2px solid #000;
+  width: 104vw;
+  height: 10vh;
+  margin-top: -2.5vh;
+  margin-left: -2vw;
+}
+
+#picHead h1 {
   text-align: center;
   color: #000;
+  padding-top: 2vh;
   text-decoration: underline;
 }
 
 #addTodo {
   text-align: center;
-  width: 100vw;
-  margin-top: 5vh;
+  background-color: #fafad2;
+  border: 1px solid #000;
+  width: 50vw;
+  height: fit-content;
+  margin: 5vh auto auto;
+  padding: 1%;
   display: block;
   position: relative;
 }
@@ -35,6 +49,10 @@ body h1 {
 
 #addTodo button, #addTodo input, #addTodo select {
   border: 2px solid #000;
+}
+
+#addTodo p {
+  font-weight: 700;
 }
 
 #todoList {
@@ -83,8 +101,20 @@ body h1 {
 
 @media screen and (width <= 800px) {
   #addTodo {
-    width: 100vw;
-    margin-left: -2.5vw;
+    background-color: #fafad2;
+    border: 1px solid #000;
+    width: 60vw;
+    height: fit-content;
+    margin: 5vh auto auto;
+    padding: 1%;
+  }
+
+  #addTodo input {
+    margin-top: .5vh;
+  }
+
+  #addTodo button {
+    margin-top: 1vh;
   }
 
   #todoList {
@@ -114,6 +144,23 @@ body h1 {
     white-space: normal;
     width: 80vw;
     display: block;
+  }
+
+  #picHead {
+    background-color: #b0c4de;
+    border-bottom: 2px solid #000;
+    width: 106vw;
+    height: 10vh;
+    margin-top: -3vh;
+    margin-left: -3vw;
+  }
+
+  #picHead h1 {
+    text-align: center;
+    color: #000;
+    padding-top: 4vh;
+    font-size: 160%;
+    text-decoration: underline;
   }
 }
 
