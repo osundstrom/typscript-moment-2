@@ -585,6 +585,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"jeorp":[function(require,module,exports) {
 //Interface för Todo, sätter typ på respektive. 
+//----------------------------------------------------------------------------------//
 class TodoList {
     //----------------------------------------------------------------------------------//
     constructor(task, priority, completed){
@@ -592,23 +593,13 @@ class TodoList {
         ;
         this.loadFromLocalStorage(); //laddar Todos från localStorage.
     }
+    //----------------------------------------------------------------------------------//
     addTodo(task, priority) {
-        if (task !== task.trim()) {
-            console.log("falseTask");
-            return false;
-        }
-        if (priority < 1) {
-            console.log("falsePrio");
-            return false;
-        }
-        if (priority > 3) {
-            console.log("falsePrio");
-            return false;
-        }
-        if (isNaN(priority)) {
-            console.log("falsePrio");
-            return false;
-        } else {
+        if (task !== task.trim()) return false;
+        if (priority < 1) return false;
+        if (priority > 3) return false;
+        if (isNaN(priority)) return false;
+        else {
             //om inget probelm hittades ny Todo
             const newTodo = {
                 task: task,
@@ -617,7 +608,6 @@ class TodoList {
             };
             this.todos.push(newTodo); //lägger till nya todon i todos. 
             this.saveToLocalStorage(); //sparar till localstorage
-            console.log("retuirn true");
             return true;
         } //blir true och inte false som om något var fel. 
     }
@@ -626,7 +616,6 @@ class TodoList {
     markTodoCompleted(todoIndex) {
         if (todoIndex >= 0 && todoIndex < this.todos.length) {
             this.todos[todoIndex].completed = true; //sätter den till klar eller completed till true. 
-            //this.todos = this.todos.filter((todo, index) => index !== todoIndex);// filtrerar todos, kollar om index är skilt från todoIndex, alltså att de ska behållas.
             this.saveToLocalStorage(); //sparar till localstorage
         }
     }
@@ -646,6 +635,7 @@ class TodoList {
         const stored = localStorage.getItem("todos"); //hämtar från localstorage
         if (stored) this.todos = JSON.parse(stored); //Sätter listan utifrån de sparade samt parsar.
     }
+    //----------------------------------------------------------------------------------//
     //ta bort en todo
     deleteTodo(deleteIndex) {
         if (deleteIndex >= 0 && deleteIndex < this.todos.length) {
@@ -653,6 +643,7 @@ class TodoList {
             this.saveToLocalStorage(); //sparar till localstorage
         }
     }
+    //----------------------------------------------------------------------------------//
     //Radera alla todos (hela listan)
     deleteAllTodos() {
         this.todos = []; //rensar hela listan
@@ -681,6 +672,7 @@ const deleteButton = document.getElementById("deleteList");
 const todoListElement = document.getElementById("todoList");
 //skapar ny
 const todoList = new TodoList();
+//----------------------------------------------------------------------------------//
 //funktion för att visa todos
 function displayTodos() {
     if (todoListElement) todoListElement.innerHTML = "";
@@ -721,16 +713,19 @@ function displayTodos() {
         }
     });
 }
+//----------------------------------------------------------------------------------//
 //eventlistener som kör displaytodos då sidan laddas in
 document.addEventListener("DOMContentLoaded", function() {
     displayTodos(); //kör displaytodods
 });
+//----------------------------------------------------------------------------------//
 //Vid klick på deleteButton raderas alla i listan
 deleteButton.addEventListener("click", function() {
     todoList.deleteAllTodos();
     displayTodos(); //Kör displayTodods
 });
-//vid klick körs e
+//----------------------------------------------------------------------------------//
+//vid klick körs
 addTodoButton.addEventListener("click", function(e) {
     e.preventDefault(); // hindra standardbeteende
     const task = taskInput.value //task är taskinpuits värde
@@ -754,7 +749,7 @@ addTodoButton.addEventListener("click", function(e) {
         priorityInput.value = ""; //rensa
         displayTodos(); //kör displayTodos
     }
-});
+}); //----------------------------------------------------------------------------------//
 
 },{}]},["dZI1r","jeorp"], "jeorp", "parcelRequire96d0")
 

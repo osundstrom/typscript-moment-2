@@ -39,7 +39,8 @@ body h1 {
 
 #todoList {
   text-align: center;
-  width: 100vw;
+  width: 95vw;
+  margin: auto;
   display: block;
 }
 
@@ -63,6 +64,13 @@ body h1 {
   white-space: normal;
   width: 50vw;
   display: block;
+}
+
+#todoList li p {
+  background-color: #f0f8ff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 1%;
 }
 
 #todoList .completed {

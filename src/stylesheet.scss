@@ -55,7 +55,9 @@ background-color: aliceblue;
 #todoList{
     display: block;
     text-align: center;
-    width: 100vw;
+    margin: auto;
+    width: 95vw;
+
 
     li{
         list-style: none;
@@ -76,6 +78,12 @@ background-color: aliceblue;
             text-align: left;
             word-wrap: break-word;
             white-space: normal;
+        }
+        p {
+            background-color: aliceblue;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 1%;
         }
        
         
