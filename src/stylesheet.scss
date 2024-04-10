@@ -22,6 +22,18 @@ background-color: aliceblue;
     
 }
 
+
+#fullDiv{
+    width: 85vw;
+    background-color: lightsteelblue;
+    margin: auto;
+    padding-top: 1vh;
+    padding-bottom: 4vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 2vh;
+}
+
 #picHead{
     width: 104vw;
     background-color: lightsteelblue;
@@ -40,19 +52,21 @@ background-color: aliceblue;
 
 #addTodo{
     display: block;
-    margin-top: 5vh;
     position: relative;
     text-align: center;
-   
+    margin: auto;
+    margin-top: 5vh;   
 
 
     width: 50vw;
        border: 1px solid black;
+       border-radius: 10px;
        background-color: lightgoldenrodyellow;
        height: fit-content;
        margin: auto;
        margin-top: 5vh;
        padding: 1%;
+
     button:hover{
         background-color: lightgreen;
     }
@@ -80,8 +94,7 @@ background-color: aliceblue;
     display: block;
     text-align: center;
     margin: auto;
-    width: 95vw;
-
+    width: 70vw;
 
     li{
         list-style: none;
@@ -92,6 +105,7 @@ background-color: aliceblue;
         margin-top: 2%;
         border: 1px solid black;
         border-radius: 10px;
+        
         button:hover{
             background-color: lightgreen;
         }
@@ -100,8 +114,9 @@ background-color: aliceblue;
             display: block;
             width: 50vw;
             text-align: left;
-            word-wrap: break-word;
-            white-space: normal;
+
+            
+
         }
         p {
             background-color: aliceblue;
@@ -115,6 +130,7 @@ background-color: aliceblue;
     }
 .completed {
     text-decoration: line-through;
+    color: red;
 }
 
 .deleteButton:hover {
@@ -126,7 +142,7 @@ background-color: aliceblue;
 //-------------------------------------------------------------//
 //-------------------------------------------------------------//
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 599px) {
 
     #addTodo {
        
@@ -148,17 +164,19 @@ background-color: aliceblue;
     #todoList{
         display: block;
         text-align: center;
-        width: 95vw;
-        margin-left: -10vw;
+        width: 60vw;
+        margin: auto;
+        margin-left: 2vw;
+        
     
         li{
             list-style: none;
             padding: 1%;
             background-color: wheat;
-            width: 80vw;
+            width: 60vw;
             margin: auto;
             margin-top: 2%;
-            border: 1px solid black;
+            border: 1px solid rgb(0, 0, 0);
             border-radius: 10px;
             button:hover{
                 background-color: lightgreen;
@@ -166,15 +184,14 @@ background-color: aliceblue;
     
             div{
                 display: block;
-                width: 80vw;
+                width: 60vw;
                 text-align: left;
-                word-wrap: break-word;
-                white-space: normal;
             }
             
         }
     
-}
+}}
+
 #picHead{
     width: 106vw;
     background-color: lightsteelblue;
@@ -192,23 +209,25 @@ background-color: aliceblue;
     }
 
 }
-}
+
 
 //-------------------------------------------------------------//
 //-------------------------------------------------------------//
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
 
     #todoList{
         display: block;
         text-align: center;
-        width: 100vw;
+        width: 75vw;
+        margin: auto;
+        margin-left: 1vw;
     
         li{
             list-style: none;
             padding: 1%;
             background-color: wheat;
-            width: 70vw;
+            width: 50vw;
             margin: auto;
             margin-top: 2%;
             border: 1px solid black;
@@ -219,10 +238,8 @@ background-color: aliceblue;
     
             div{
                 display: block;
-                width: 70vw;
+                width: 50vw;
                 text-align: left;
-                word-wrap: break-word;
-                white-space: normal;
             }
             
         }
@@ -231,3 +248,39 @@ background-color: aliceblue;
 
 }
 
+
+
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+
+    #todoList{
+        display: block;
+        text-align: center;
+        width: 75vw;
+        margin: auto;
+        margin-left: 3vw;
+    
+        li{
+            list-style: none;
+            padding: 1%;
+            background-color: wheat;
+            width: 50vw;
+            margin: auto;
+            margin-top: 2%;
+            border: 1px solid black;
+            border-radius: 10px;
+            button:hover{
+                background-color: lightgreen;
+            }
+    
+            div{
+                display: block;
+                width: 50vw;
+                text-align: left;
+            }
+            
+        }
+    
+}
+
+}

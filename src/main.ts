@@ -162,7 +162,7 @@ function displayTodos() {
 
         const todoP = document.createElement("p"); //skapar p
 
-        const todoHr = document.createElement("hr")//Skapar hr
+        //const todoHr = document.createElement("hr")//Skapar hr
 
         const todoComplete = document.createElement("button"); //skapar button
         todoComplete.innerText = "klar" //Button text sätts till klar
@@ -187,7 +187,7 @@ function displayTodos() {
 
         todoP.appendChild(todoText); //lägger in text i div
         todoDiv.appendChild(todoP); //lägger in text i div
-        todoDiv.appendChild(todoHr); //Lägger till hr i div
+        //todoDiv.appendChild(todoHr); //Lägger till hr i div
         todoDiv.appendChild(todoComplete); //lägger till klar knappen i div
         todoLI.appendChild(todoDiv); //lägger till div i li
         todoListElement.appendChild(todoLI); //LÄgger till todoLI till UL-listan
